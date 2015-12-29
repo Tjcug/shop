@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="shop" location="10,108" size="525,245">
+    <action name="category_*" location="311,48" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+      <result name="jsonMap" />
+    </action>
+    <action name="send_category_*" location="311,163" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="query.jsp" />
+      </result>
+    </action>
+    <action name="account_*" location="66,163" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="index.jsp" path="/index.jsp" location="75,10" size="150,55" />
+  <webResource name="query.jsp" path="/WEB-INF/category/query.jsp" location="600,255" size="150,55" />
+</Struts2Diagram>
+

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+<constant name="struts.multipart.saveDir" value="/tmp"/>
+<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+<!-- 打开开发者模式 -->
+
+	<package name="shop" extends="json-default">
+	
+	<global-results>
+		<result name="aindex">/WEB-INF/main/aindex.jsp</result>
+		<result name="index">/index.jsp</result>
+		<result name="ulogin">/ulogin.jsp</result>
+		<result name="stream" type="stream">
+			 <param name="inputName">inputStream</param>
+		</result>
+	</global-results>
+	
+	 	<action name="category_*" class="categoryAction" method="{1}">
+	 		<result name="success">/index.jsp</result>
+	 		<result name="jsonMap" type="json">
+	 			<param name="root" >pageMap</param>
+	 			<param name="excludeProperties">
+	 			rows\[\d+\]\.account\.pass,
+	 			rows\[\d+\]\.account\.name,
+	 			rows\[\d+\]\.account\.categories,
+	 			rows\[\d+\]\.products
+	 		</param>
+	 		</result>
+	 		<result name="stream" type="stream">
+	 			<param name="inputName">inputStream</param>
+	 		</result>
+	 		<result name="jsonList" type="json">
+	 			<param name="root" >jsonList</param>
+	 			<param name="excludeProperties">
+	 				<!-- [0].account.pass [0]-->
+	 				\[\d+\]\.account,
+	 				\[\d+\]\.products
+	 			</param>
+	 		</result>
+	 	</action>
+	 	
+	 	<action name="send_*_*" class="sendAction">
+	 		<result name="success">/WEB-INF/{1}/{2}.jsp</result>
+	 	</action>
+	 	
+	 	<action name="account_*" class="accountAction" method="{1}">
+	 		<result name="success">/index.jsp</result>
+	 		<result name="jsonList" type="json">
+	 			<param name="root" >jsonList</param>
+	 			<param name="excludeProperties">
+	 				<!-- [0].account.pass [0]-->
+	 				\[\d+\]\.pass,\[\d+\]\.name,\[\d+\]\.categories
+	 			</param>
+	 		</result>
+	 	</action>
+	 	
+	 	<action name="product_*" class="productAction" method="{1}">
+			 	
+				<result name="jsonMap" type="json">
+					<param name="root">pageMap</param>
+					<param name="excludeProperties">
+						<!-- rows[0].category.account rows[0].date -->
+						rows\[\d+\]\.category\.account,rows\[\d+\]\.date,
+						rows\[\d+\]\.sorders,
+						rows\[\d+\]\.category.products
+					</param>
+				</result>
+				<result name="detail">/detail.jsp</result>
+	 	</action>
+	 	
+	 	<action name="sorder_*" class="sorderAction" method="{1}">
+	 		<result name="showCar" type="redirect">/showCar.jsp</result>
+	 		<result name="jsonObjectList" type="json">
+	 			<param name="root" >jsonObjectList</param>
+	 		</result>
+	 	</action>
+	 	
+	 	<action name="user_*" class="userAction" method="{1}">
+	 		<result name="goURL">${#session.goURL}</result>
+	 	</action>
+	 	
+	 	<action name="forder_*" class="forderAction" method="{1}">
+	 		<result name="bank">/user/bank.jsp</result>
+	 	</action>
+	 	
+	 	<action name="pay_*" class="payAction" method="{1}">
+	 		<result name="reqpay">/user/reqpay.jsp</result>
+	 	</action>
+	 </package>
+</struts>
