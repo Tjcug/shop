@@ -1,2 +1,15 @@
 /com
 /orm
+/.struts.mex
+/applicationContext.xml
+/conn.properties
+/ehcache.xml
+/ehcacheDetail.xml
+/hibernate.cfg.xml
+/pay.properties
+/public.properties
+/public_remote.properties
+/remote.properties
+/remote.sql
+/shop.sql
+/struts.xml
