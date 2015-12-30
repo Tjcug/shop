@@ -10,10 +10,10 @@
             <column name="id" />
             <generator class="native" />
         </id>
-        <many-to-one name="user" class="com.shop.model.User" lazy="false"  fetch="select">
+        <many-to-one name="user" class="com.shop.model.User"  fetch="select">
             <column name="uid" />
         </many-to-one>
-        <many-to-one name="status" class="com.shop.model.Status" lazy="false"  fetch="select">
+        <many-to-one name="status" class="com.shop.model.Status"  fetch="select">
             <column name="sid" />
         </many-to-one>
         <property name="name" type="java.lang.String">

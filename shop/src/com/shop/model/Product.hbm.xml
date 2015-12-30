@@ -10,7 +10,7 @@
             <column name="id" />
             <generator class="native" />
         </id>
-        <many-to-one name="category" class="com.shop.model.Category" lazy="false" fetch="select">
+        <many-to-one name="category" class="com.shop.model.Category"  fetch="select">
             <column name="cid" />
         </many-to-one>
         <property name="name" type="java.lang.String">

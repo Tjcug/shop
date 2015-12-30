@@ -87,9 +87,8 @@ public class Category implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", account=" + account + ", type=" + type
-				+ ", hot=" + hot + ", products=" + products + "]";
+		return "Category [id=" + id  + ", type=" + type
+				+ ", hot=" + hot +  "]";
 	}
-	
 	
 }

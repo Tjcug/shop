@@ -28,14 +28,14 @@ public class ProductServiceImplTest {
 	@Test
 	public void findALL() {
 		for(Product product:productService.queryALL()){
-			System.out.println(product.getCategory());
+			System.out.println(product);
 		}
 	}
 	
 	@Test
 	public void queryJoinCategory(){
 		for(Product product:productService.queryJoinCategory("", 1, 22)){
-			System.out.println(product.getPic());
+			System.out.println(product.getCategory().getType());
 		}
 	}
 	

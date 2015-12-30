@@ -1,11 +1,11 @@
-/com
-/orm
 /.struts.mex
 /applicationContext.xml
+/com
 /conn.properties
 /ehcache.xml
 /ehcacheDetail.xml
 /hibernate.cfg.xml
+/orm
 /pay.properties
 /public.properties
 /public_remote.properties

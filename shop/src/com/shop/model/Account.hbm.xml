@@ -19,7 +19,7 @@
         <property name="pass" type="java.lang.String">
             <column name="pass" length="20" />
         </property>
-        <set name="categories" inverse="true">
+        <set name="categories" inverse="true" >
             <key>
                 <column name="aid" />
             </key>
