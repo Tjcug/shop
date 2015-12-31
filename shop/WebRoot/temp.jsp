@@ -6,7 +6,7 @@
   <head>
     <title>购物商城首页</title>
   </head>
-  
+  xxxx
   <body>
  
 </body>
