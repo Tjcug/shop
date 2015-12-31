@@ -15,10 +15,15 @@
 		<result name="aindex">/WEB-INF/main/aindex.jsp</result>
 		<result name="index">/index.jsp</result>
 		<result name="ulogin">/ulogin.jsp</result>
+		<result name="error">/error.jsp</result>
 		<result name="stream" type="stream">
 			 <param name="inputName">inputStream</param>
 		</result>
 	</global-results>
+	
+	<global-exception-mappings>
+	    <exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
+	</global-exception-mappings>
 	
 	 	<action name="category_*" class="categoryAction" method="{1}">
 	 		<result name="success">/index.jsp</result>

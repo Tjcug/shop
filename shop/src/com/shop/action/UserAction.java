@@ -28,4 +28,14 @@ public class UserAction extends BaseAction<User>{
 			}
 		}
 	}
+	
+	public String demo(){
+		try {
+			System.out.println("-------demo-------");
+			Integer.parseInt("xyz");
+		} catch (Exception e) {
+			throw new RuntimeException("字符串转换错误！"); 
+		}
+		return "error";
+	}
 }
